@@ -28,6 +28,20 @@ class Orders_dao:
         self.connection.commit()
         return order_id
 
+    def get_all_orders(self):
+        cursor = self.connection.cursor()
+        query = 'select * from orders'
+        cursor.execute(query)
+        response = []
+        for (order_id,customer_name,datetime,total) in cursor:
+            response.append({
+                'order_id':order_id,
+                'customer_name':customer_name,
+                'datetime':datetime,
+                'total':total
+
+            })
+        return response    
 
 
 

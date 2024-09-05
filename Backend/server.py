@@ -77,7 +77,12 @@ def insertOrder():
     response.headers.add('Access-Control-Allow-Origin','*')
     return response
 
-
+@app.route('/getAllOrders',methods = ['GET'])
+def Get_Orders():
+    Order = Orders_dao.Orders_dao()
+    response = jsonify(Order.get_all_orders())
+    response.headers.add('Access-Control-Allow-Origin','*')
+    return response
 
 if __name__ == "__main__":
     print("Starting Python Flask Server for store-management system")
