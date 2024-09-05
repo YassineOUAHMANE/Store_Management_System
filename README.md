@@ -25,6 +25,7 @@ This project is a **web-based Store Management System** designed to streamline t
 - API: 🔌 RESTful API for product and order management
 
 ![](homepage.png)
+![](Manage_Product.png)
 
 
 
